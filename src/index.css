@@ -1,0 +1,91 @@
+@font-face {
+    font-family: "WiiSans";
+    src: url("./assets/fonts/contm.ttf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Rodin";
+    src: url("./assets/fonts/Rodin.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    cursor: url(./assets/wiicursor.cur), auto;
+}
+
+.mm-striped-bg {
+    background-image: linear-gradient(
+        to bottom,
+        #f0f0f0 25%,
+        transparent 25%,
+        transparent 50%,
+        #f0f0f0 50%,
+        #f0f0f0 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 12px 12px;
+}
+
+.ec-striped-bg {
+    background-image: linear-gradient(
+        to bottom,
+        #e0e0e0 25%,
+        transparent 25%,
+        transparent 50%,
+        #e0e0e0 50%,
+        #e0e0e0 75%,
+        transparent 75%,
+        transparent
+    );
+    background-size: 5px 5px;
+}
+
+.options-button-height {
+    height: 140px;
+}
+
+.mail-option-button-size {
+    font-size: 40px /* 36px */;
+    line-height: 40px /* 40px */;
+}
+
+.mm-bar {
+    border-top: none;
+    border-bottom: 4px solid #00c4ff;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+}
+
+.mm-left-bar {
+    width: calc(
+        50% - 8rem
+    ); /* Ajuste del ancho para que llegue justo antes de la caja */
+    height: 4px; /* Altura de la línea */
+    background-color: #00c4ff;
+    position: relative;
+    border-bottom-right-radius: 50px; /* Curva hacia abajo a la derecha */
+    transform: translateY(6px); /* Ajuste de la curva hacia abajo */
+}
+
+.mm-right-bar {
+    width: calc(
+        50% - 8rem
+    ); /* Ajuste del ancho para que llegue justo antes de la caja */
+    height: 4px; /* Altura de la línea */
+    background-color: #00c4ff;
+    position: relative;
+    border-bottom-left-radius: 50px; /* Curva hacia abajo a la izquierda */
+    transform: translateY(6px); /* Ajuste de la curva hacia abajo */
+}
+
+.channel-height {
+    height: 14rem;
+}
