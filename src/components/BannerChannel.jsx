@@ -22,6 +22,8 @@ const BannerChannel = ({ image, legend, classes }) => {
             setBackgroundColor("bg-[#0077b5]");
         } else if (legend === "Github Profile") {
             setBackgroundColor("bg-[#24292e]");
+        } else if (legend === "Featured Project") {
+            setBackgroundColor("bg-blue-800");
         }
     }, []);
 

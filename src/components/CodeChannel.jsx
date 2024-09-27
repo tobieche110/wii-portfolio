@@ -30,7 +30,7 @@ const CodeChannel = () => {
             {/* Tooltip */}
             {showTooltip && (
                 <div className="font-rodin absolute left-1/2 transform -translate-x-1/2 mt-2 px-24 py-2 bg-white text-black rounded-full text-xl border-2 border-gray-300 shadow-xl whitespace-nowrap">
-                    <p>See source code</p>
+                    <p>View the source code</p>
                 </div>
             )}
         </div>

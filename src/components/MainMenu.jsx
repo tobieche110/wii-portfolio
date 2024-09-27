@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import CodeChannel from "./CodeChannel";
 import TechnologiesChannel from "./TechnologiesChannel";
+import starSvg from "../assets/svgs/star.svg";
 
 const MainMenu = () => {
     const [fadeIn, setFadeIn] = useState(false);
@@ -27,7 +28,9 @@ const MainMenu = () => {
                     <Link to={"/about-me"}>
                         <DiscChannel />
                     </Link>
-                    <Link to={"/technologies-view"}><TechnologiesChannel /></Link>
+                    <Link to={"/technologies-view"}>
+                        <TechnologiesChannel />
+                    </Link>
                     <Link
                         to={"https://www.linkedin.com/in/tobiasechenique/"}
                         target="_blank"
@@ -50,7 +53,19 @@ const MainMenu = () => {
                             classes={"animate-bounce "}
                         />
                     </Link>
-                    <EmptyChannel />
+                    <Link
+                        to={
+                            "https://github.com/tobieche110/algoritmo-paneles-acusticos"
+                        }
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <BannerChannel
+                            image={starSvg}
+                            legend={"Featured Project"}
+                            classes={"animate-spin-slower"}
+                        />
+                    </Link>
                     <Link
                         to={"https://github.com/tobieche110/wii-portofolio"}
                         target="_blank"
