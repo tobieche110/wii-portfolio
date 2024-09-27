@@ -1,10 +1,25 @@
+import { useState } from "react";
 import { IoWarningSharp } from "react-icons/io5";
 import { PiMouseLeftClickFill } from "react-icons/pi";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const WarningMenu = () => {
+    const [fadeOut, setFadeOut] = useState(false);
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        setFadeOut(true); // Activa la transición
+        setTimeout(() => {
+            navigate("/main-menu"); // Navega después de 1 segundo para permitir la transición
+        }, 1000); // El tiempo de la animación CSS
+    };
+
     return (
-        <div className="flex h-screen w-full bg-black">
+        <div
+            className={`flex h-screen w-full bg-black ${
+                fadeOut ? "fade-out" : ""
+            }`}
+        >
             <div className="flex flex-col items-center justify-center w-full">
                 <div className="flex items-center">
                     <div className="text-8xl text-yellow-400">
@@ -22,14 +37,15 @@ const WarningMenu = () => {
                 </div>
                 <div className="flex items-center mt-4">
                     <div className="font-rodin font-black text-3xl text-center text-white ml-4">
-                        THIS IS MY PORTOFOLIO INSPIRED BY THE WII MAIN MENU. FOR THE BEST EXPERIENCE, VIEW IT ON A DESKTOP.
+                        THIS IS MY PORTOFOLIO INSPIRED BY THE WII MAIN MENU.
                     </div>
                 </div>
                 <div className="flex items-center mt-4">
                     <div className="font-rodin font-black text-3xl text-center text-white ml-4">
-                        I HOPE YOU LIKE IT THE SAME WAY I LIKED MAKING IT :)
+                        FOR THE BEST EXPERIENCE, VIEW IT ON A DESKTOP.
                     </div>
                 </div>
+
                 <div className="flex items-center mt-16">
                     <div className="font-rodin font-black text-2xl text-center text-white ml-4">
                         You can check the code at
@@ -47,13 +63,17 @@ const WarningMenu = () => {
                 </div>
 
                 <div className="flex items-center mt-16">
-                    <div className="font-rodin font-black text-4xl text-center text-white hover:underline">
-                        <Link to={"/main-menu"}>Click Here{" "}
-                        <span className="inline-flex items-center">
-                            <PiMouseLeftClickFill />
-                        </span>{" "}
-                        to continue
-                        </Link>
+                    <div className="font-rodin font-black text-4xl text-center text-white hover:underline animate-blink">
+                        <div
+                            onClick={handleClick}
+                            style={{ cursor: "pointer" }}
+                        >
+                            Click Here{" "}
+                            <span className="inline-flex items-center">
+                                <PiMouseLeftClickFill />
+                            </span>{" "}
+                            to continue
+                        </div>
                     </div>
                 </div>
             </div>

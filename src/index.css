@@ -12,6 +12,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "digital-dream";
+    src: url("./assets/fonts/DIGITALDREAM.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -53,39 +60,119 @@ body {
 }
 
 .mail-option-button-size {
-    font-size: 40px /* 36px */;
-    line-height: 40px /* 40px */;
+    font-size: 40px;
+    line-height: 40px;
 }
 
 .mm-bar {
     border-top: none;
-    border-bottom: 4px solid #00c4ff;
+    border-bottom: 6px solid #00c4ff;
     border-bottom-left-radius: 50px;
     border-bottom-right-radius: 50px;
 }
 
+.mm-left-box {
+    width: calc(50% - 8rem);
+    height: 100px;
+    background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+    transform: translateX(-17rem);
+    position: absolute;
+    border-bottom-right-radius: 50%;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+}
+
 .mm-left-bar {
-    width: calc(
-        50% - 8rem
-    ); /* Ajuste del ancho para que llegue justo antes de la caja */
-    height: 4px; /* Altura de la línea */
-    background-color: #00c4ff;
-    position: relative;
-    border-bottom-right-radius: 50px; /* Curva hacia abajo a la derecha */
-    transform: translateY(6px); /* Ajuste de la curva hacia abajo */
+    border-top: 4px solid #00c4ff;
+    border-radius: 50px;
+    box-shadow: 0 -2px #00c4ff;
+}
+
+.mm-right-box {
+    width: calc(50% - 8rem);
+    height: 100px;
+    background-color: rgb(209 213 219 / var(--tw-bg-opacity));
+    transform: translateX(17rem);
+    position: absolute;
+    border-bottom-left-radius: 50%;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
 }
 
 .mm-right-bar {
-    width: calc(
-        50% - 8rem
-    ); /* Ajuste del ancho para que llegue justo antes de la caja */
-    height: 4px; /* Altura de la línea */
-    background-color: #00c4ff;
-    position: relative;
-    border-bottom-left-radius: 50px; /* Curva hacia abajo a la izquierda */
-    transform: translateY(6px); /* Ajuste de la curva hacia abajo */
+    border-top: 4px solid #00c4ff;
+    border-radius: 50px;
+    box-shadow: 0 -2px #00c4ff;
 }
 
 .channel-height {
     height: 14rem;
+}
+
+.transparent-border {
+    border-color: transparent;
+    border-width: 4px;
+}
+
+.transition-border {
+    transition: border-color 0.2s ease-in-out;
+}
+
+@keyframes blink {
+    0%,
+    50%,
+    100% {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+.animate-blink {
+    animation: blink 2.5s infinite; /* Parpadeo continuo con duración de 1 segundo */
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+        background-color: transparent;
+    }
+    100% {
+        opacity: 0;
+        background-color: black;
+    }
+}
+
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        background-color: black;
+    }
+    100% {
+        opacity: 1;
+        background-color: transparent;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s forwards;
+}
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin-slower {
+    animation: spin-slow 5s linear infinite;
 }

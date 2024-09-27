@@ -7,6 +7,7 @@ export const theme = {
     fontFamily: {
       sans: ['WiiSans', 'WiiSans'],
       rodin: ['Rodin', 'Rodin'],
+      digitaldream: ['digital-dream', 'digital-dream'],
     },
   },
 };
