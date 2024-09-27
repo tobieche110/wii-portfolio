@@ -176,3 +176,50 @@ body {
 .animate-spin-slower {
     animation: spin-slow 5s linear infinite;
 }
+
+.typewriter {
+    overflow: hidden; /* Ocultar el contenido extra */
+    border-right: 0.1em solid white; /* Barra de escritura */
+    white-space: nowrap; /* Evita que el texto salte a la siguiente línea */
+    animation: typing 4s steps(5, end) infinite,
+        blink-caret 0.75s step-end infinite;
+    display: inline-block;
+}
+
+/* Efecto de escritura y borrado */
+@keyframes typing {
+    0%,
+    10% {
+        width: 0;
+    }
+    20%,
+    30% {
+        width: 1ch; /* Mostrar < */
+    }
+    40%,
+    50% {
+        width: 2ch; /* Mostrar </ */
+    }
+    60%,
+    70% {
+        width: 3ch; /* Mostrar </> */
+    }
+    80%,
+    90% {
+        width: 2ch; /* Volver a </ */
+    }
+    100% {
+        width: 0; /* Borrar todo */
+    }
+}
+
+/* Cursor parpadeante */
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: white;
+    }
+}

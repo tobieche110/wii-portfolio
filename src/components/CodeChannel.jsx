@@ -1,14 +1,13 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
-const BannerChannel = ({ image, legend, classes }) => {
+const CodeChannel = () => {
     const [showTooltip, setShowTooltip] = useState(false);
     const [hoverTimeout, setHoverTimeout] = useState(null);
-    const [backgroundColor, setBackgroundColor] = useState("");
 
     const handleMouseEnter = () => {
         const timeoutId = setTimeout(() => {
             setShowTooltip(true);
-        }, 250); // Esperar 250ms antes de mostrar el tooltip
+        }, 250);
         setHoverTimeout(timeoutId);
     };
 
@@ -16,37 +15,26 @@ const BannerChannel = ({ image, legend, classes }) => {
         clearTimeout(hoverTimeout);
         setShowTooltip(false);
     };
-
-    useEffect(() => {
-        if (legend === "LinkedIn Profile") {
-            setBackgroundColor("bg-[#0077b5]");
-        } else if (legend === "Github Profile") {
-            setBackgroundColor("bg-[#24292e]");
-        }
-    }, []);
-
     return (
         <div
             className="relative transparent-border hover:border-[#00c4ff] rounded-xl transition-border"
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
         >
-            <div className={`${backgroundColor} rounded-lg w-full h-full overflow-hidden channel-height flex justify-center items-center`}>
-                <img
-                    src={image}
-                    alt={legend}
-                    className={`object-cover w-24 h-24 ${classes}`}
-                />
+            <div className="bg-teal-800 text-white text-center flex items-center justify-center font-mono rounded-lg w-full h-full overflow-hidden channel-height">
+                <div className="typewriter text-7xl">
+                    <span>{"</>"}</span>
+                </div>
             </div>
 
             {/* Tooltip */}
             {showTooltip && (
                 <div className="font-rodin absolute left-1/2 transform -translate-x-1/2 mt-2 px-24 py-2 bg-white text-black rounded-full text-xl border-2 border-gray-300 shadow-xl whitespace-nowrap">
-                    {legend}
+                    <p>See source code</p>
                 </div>
             )}
         </div>
     );
 };
 
-export default BannerChannel;
+export default CodeChannel;

@@ -2,10 +2,11 @@ import EmptyChannel from "./EmptyChannel";
 import OptionsSection from "./OptionsSection";
 import DiscChannel from "./DiscChannel";
 import BannerChannel from "./BannerChannel";
-import githubBanner from "../assets/images/github-banner.png";
-import linkedinBanner from "../assets/images/linkedin-banner-2.jpeg";
+import githubSvg from "../assets/svgs/github.svg";
+import linkedinSvg from "../assets/svgs/linkedin.svg";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import CodeChannel from "./CodeChannel";
 import TechnologiesChannel from "./TechnologiesChannel";
 
 const MainMenu = () => {
@@ -26,14 +27,14 @@ const MainMenu = () => {
                     <Link to={"/about-me"}>
                         <DiscChannel />
                     </Link>
-                    <TechnologiesChannel />
+                    <Link to={"/technologies-view"}><TechnologiesChannel /></Link>
                     <Link
                         to={"https://www.linkedin.com/in/tobiasechenique/"}
                         target="_blank"
                         rel="noopener noreferrer"
                     >
                         <BannerChannel
-                            image={linkedinBanner}
+                            image={linkedinSvg}
                             legend={"LinkedIn Profile"}
                             classes={"animate-pulse"}
                         />
@@ -44,13 +45,19 @@ const MainMenu = () => {
                         rel="noopener noreferrer"
                     >
                         <BannerChannel
-                            image={githubBanner}
+                            image={githubSvg}
                             legend={"Github Profile"}
-                            classes={"animate-bounce"}
+                            classes={"animate-bounce "}
                         />
                     </Link>
                     <EmptyChannel />
-                    <EmptyChannel />
+                    <Link
+                        to={"https://github.com/tobieche110/wii-portofolio"}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <CodeChannel />
+                    </Link>
                     <EmptyChannel />
                     <EmptyChannel />
                     <EmptyChannel />

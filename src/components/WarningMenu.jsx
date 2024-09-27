@@ -20,7 +20,7 @@ const WarningMenu = () => {
                 fadeOut ? "fade-out" : ""
             }`}
         >
-            <div className="flex flex-col items-center justify-center w-full">
+            <div className="flex flex-col items-center justify-center w-full text-center">
                 <div className="flex items-center">
                     <div className="text-8xl text-yellow-400">
                         <IoWarningSharp />
