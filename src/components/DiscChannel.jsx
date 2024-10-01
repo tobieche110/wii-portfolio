@@ -40,7 +40,7 @@ const DiscChannel = () => {
                         alt="Avatar"
                         className="w-28 rounded-full border-4 border-white shadow-md"
                     />
-                    <p className="font-serif font-bold md:text-lg xl:text-3xl text-2xl items-center justify-center mt-4 bg-white px-5 py-1 rounded-full shadow-md">
+                    <p className="font-serif font-bold md:text-base lg:text-base xl:text-xl text-2xl items-center justify-center mt-4 bg-white px-5 py-1 rounded-full shadow-md">
                         About Tobias
                     </p>
                 </div>
