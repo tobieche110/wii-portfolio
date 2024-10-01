@@ -8,6 +8,7 @@ export const theme = {
       sans: ['WiiSans', 'WiiSans'],
       rodin: ['Rodin', 'Rodin'],
       digitaldream: ['digital-dream', 'digital-dream'],
+      e1234: ['e1234', 'e1234'],
     },
   },
 };

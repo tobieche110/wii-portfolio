@@ -1,26 +1,38 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { IoWarningSharp } from "react-icons/io5";
 import { PiMouseLeftClickFill } from "react-icons/pi";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import gsap from "gsap";
 
 const WarningMenu = () => {
-    const [fadeOut, setFadeOut] = useState(false);
+    const [fadeOutBackground, setFadeOutBackground] = useState(false);
+    const contentRef = useRef();
     const navigate = useNavigate();
 
     const handleClick = () => {
-        setFadeOut(true); // Activa la transición
-        setTimeout(() => {
-            navigate("/main-menu"); // Navega después de 1 segundo para permitir la transición
-        }, 1000); // El tiempo de la animación CSS
+        gsap.to(contentRef.current, {
+            opacity: 0,
+            duration: 0.5,
+            onComplete: () => {
+                // Esperar 2 segundos antes de cambiar el fondo
+                setTimeout(() => {
+                    setFadeOutBackground(true);
+                    navigate("/main-menu"); // Navegar después de la animación
+                }, 1000);
+            },
+        });
     };
 
     return (
         <div
             className={`flex h-screen w-full bg-black ${
-                fadeOut ? "fade-out" : ""
+                fadeOutBackground ? "fade-out" : ""
             }`}
         >
-            <div className="flex flex-col items-center justify-center w-full text-center">
+            <div
+                className="flex flex-col items-center justify-center w-full text-center"
+                ref={contentRef}
+            >
                 <div className="flex items-center">
                     <div className="text-8xl text-yellow-400">
                         <IoWarningSharp />

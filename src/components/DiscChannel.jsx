@@ -35,7 +35,7 @@ const DiscChannel = () => {
                     <img
                         src={avatar}
                         alt="Avatar"
-                        className="w-36 rounded-full border-4 border-white shadow-md"
+                        className="w-28 rounded-full border-4 border-white shadow-md"
                     />
                     <p className="font-serif font-bold text-3xl mt-4 bg-white px-5 py-1 rounded-full shadow-md">
                         About Tobias

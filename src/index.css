@@ -19,6 +19,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: "e1234";
+    src: url("./assets/fonts/E1234.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -106,7 +113,7 @@ body {
 }
 
 .channel-height {
-    height: 14rem;
+    height: 12rem;
 }
 
 .transparent-border {
@@ -161,7 +168,7 @@ body {
 }
 
 .fade-in {
-    animation: fadeIn 1s forwards;
+    animation: fadeIn 3s forwards;
 }
 
 @keyframes spin-slow {
@@ -222,4 +229,18 @@ body {
     50% {
         border-color: white;
     }
+}
+
+/* Fondo del footer */
+.mm-footer-bg {
+    background-image: url("assets/svgs/menu-footer.svg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover; /* Cover asegura que cubra tanto el ancho como el alto */
+}
+
+/* Altura del footer */
+.footer-height {
+    height: auto;
+    min-height: 322px; /* Altura mínima */
 }

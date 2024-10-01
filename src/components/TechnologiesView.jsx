@@ -11,13 +11,16 @@ import postgres from "../assets/svgs/postgres.svg";
 import python from "../assets/svgs/python.svg";
 import rails from "../assets/svgs/rails.svg";
 import spring from "../assets/svgs/spring.svg";
+import figma from "../assets/svgs/figma.svg";
+import bootstrap from "../assets/svgs/bootstrap.svg";
+import gsapSvg from "../assets/svgs/gsap.svg";
 import ViewFooter from "./ViewFooter";
 
 const TechnologiesView = () => {
     const [currentStep, setCurrentStep] = useState(0);
 
     useEffect(() => {
-        const steps = 17;
+        const steps = 21;
         const interval = 300;
         const displayTime = 1000;
 
@@ -166,6 +169,27 @@ const TechnologiesView = () => {
                         alt="Tailwind CSS"
                         className={`w-20 transition-opacity duration-700 ${
                             currentStep >= 16 ? "opacity-100" : "opacity-0"
+                        }`}
+                    />
+                    <img
+                        src={figma}
+                        alt="Figma"
+                        className={`w-20 transition-opacity duration-700 ${
+                            currentStep >= 17 ? "opacity-100" : "opacity-0"
+                        }`}
+                    />
+                    <img
+                        src={bootstrap}
+                        alt="Bootstrap"
+                        className={`w-20 transition-opacity duration-700 ${
+                            currentStep >= 18 ? "opacity-100" : "opacity-0"
+                        }`}
+                    />
+                    <img
+                        src={gsapSvg}
+                        alt="GSAP"
+                        className={`w-20 transition-opacity duration-700 ${
+                            currentStep >= 19 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                 </div>
