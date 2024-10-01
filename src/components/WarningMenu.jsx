@@ -49,7 +49,7 @@ const WarningMenu = () => {
                 </div>
                 <div className="flex items-center mt-4">
                     <div className="font-rodin font-black text-xl md:text-3xl text-center text-white md:ml-4">
-                        THIS IS MY PORTOFOLIO INSPIRED BY THE WII MAIN MENU.
+                        THIS IS MY PORTFOLIO INSPIRED BY THE WII MAIN MENU.
                     </div>
                 </div>
                 <div className="flex items-center mt-4">
@@ -65,12 +65,12 @@ const WarningMenu = () => {
                 </div>
                 <div className="font-rodin font-black text-xl md:text-3xl text-center text-white md:ml-4">
                     <a
-                        href="https://github.com/tobieche110/wii-portofolio"
+                        href="https://github.com/tobieche110/wii-portfolio"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-rodin font-black text-2xl text-blue-300 ml-4 hover:underline"
                     >
-                        github.com/tobieche110/wii-portofolio
+                        github.com/tobieche110/wii-portfolio
                     </a>
                 </div>
 

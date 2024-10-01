@@ -75,7 +75,7 @@ const MainMenu = () => {
                     />
                 </Link>
                 <Link
-                    to={"https://github.com/tobieche110/wii-portofolio"}
+                    to={"https://github.com/tobieche110/wii-portfolio"}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="md:w-1/4 md:p-2"
