@@ -9,9 +9,13 @@ import CodeChannel from "./CodeChannel";
 import TechnologiesChannel from "./TechnologiesChannel";
 import starSvg from "../assets/svgs/star.svg";
 import MmFooter from "./MmFooter";
+import MmFooterMobile from "./MmFooterMobile";
+import { useMediaQuery } from "react-responsive";
 
 const MainMenu = () => {
     const [fadeIn, setFadeIn] = useState(false);
+    // Detectar si la pantalla es md o más grande
+    const isMdOrLarger = useMediaQuery({ minWidth: 768 });
 
     useEffect(() => {
         setFadeIn(true);
@@ -19,23 +23,23 @@ const MainMenu = () => {
 
     return (
         <div
-            className={`mm-striped-bg bg-gray-100 w-full h-screen fixed ${
+            className={`mm-striped-bg bg-gray-100 md:w-full md:h-screen md:fixed pb-20 ${
                 fadeIn ? "fade-in" : ""
             }`}
         >
             {/* Contenido principal del menú */}
-            <div className="flex flex-wrap px-32 pt-10">
-                <Link to={"/about-me"} className="w-1/4 p-2">
+            <div className="md:flex flex-wrap md:px-32 md:pt-10 p-3 pt-14 justify-center">
+                <Link to={"/about-me"} className="md:w-1/4 md:p-2">
                     <DiscChannel />
                 </Link>
-                <Link to={"/technologies-view"} className="w-1/4 p-2">
+                <Link to={"/technologies-view"} className="md:w-1/4 md:p-2">
                     <TechnologiesChannel />
                 </Link>
                 <Link
                     to={"https://www.linkedin.com/in/tobiasechenique/"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-1/4 p-2"
+                    className="md:w-1/4 md:p-2"
                 >
                     <BannerChannel
                         image={linkedinSvg}
@@ -47,7 +51,7 @@ const MainMenu = () => {
                     to={"https://github.com/tobieche110"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-1/4 p-2"
+                    className="md:w-1/4 md:p-2"
                 >
                     <BannerChannel
                         image={githubSvg}
@@ -61,7 +65,7 @@ const MainMenu = () => {
                     }
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-1/4 p-2"
+                    className="md:w-1/4 md:p-2"
                 >
                     <BannerChannel
                         image={starSvg}
@@ -73,32 +77,41 @@ const MainMenu = () => {
                     to={"https://github.com/tobieche110/wii-portofolio"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-1/4 p-2"
+                    className="md:w-1/4 md:p-2"
                 >
                     <CodeChannel />
                 </Link>
-                <div className="w-1/4 p-2">
-                    <EmptyChannel />
-                </div>
-                <div className="w-1/4 p-2">
-                    <EmptyChannel />
-                </div>
-                <div className="w-1/4 p-2">
-                    <EmptyChannel />
-                </div>
-                <div className="w-1/4 p-2">
-                    <EmptyChannel />
-                </div>
-                <div className="w-1/4 p-2">
-                    <EmptyChannel />
-                </div>
-                <div className="w-1/4 p-2">
-                    <EmptyChannel />
-                </div>
+                {isMdOrLarger ? (
+                    <>
+                        <div className="md:w-1/4 md:p-2">
+                            <EmptyChannel />
+                        </div>
+                        <div className="md:w-1/4 md:p-2">
+                            <EmptyChannel />
+                        </div>
+                        <div className="md:w-1/4 md:p-2">
+                            <EmptyChannel />
+                        </div>
+                        <div className="md:w-1/4 md:p-2">
+                            <EmptyChannel />
+                        </div>
+                        <div className="md:w-1/4 md:p-2">
+                            <EmptyChannel />
+                        </div>
+                        <div className="md:w-1/4 md:p-2">
+                            <EmptyChannel />
+                        </div>
+                    </>
+                ) : null}
             </div>
 
             {/* Footer */}
-            <MmFooter />
+            <div className="block md:hidden">
+                <MmFooterMobile />
+            </div>
+            <div className="hidden md:block">
+                <MmFooter />
+            </div>
         </div>
     );
 };

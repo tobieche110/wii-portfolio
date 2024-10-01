@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { RiDiscFill } from "react-icons/ri";
-import { ImBubble } from "react-icons/im";
+import { useMediaQuery } from "react-responsive";
 import avatar from "../assets/svgs/avatar.svg";
 
 const DiscChannel = () => {
     const [showTooltip, setShowTooltip] = useState(false);
     const [hoverTimeout, setHoverTimeout] = useState(null);
+    const isMdOrLarger = useMediaQuery({ minWidth: 768 });
 
     const handleMouseEnter = () => {
         const timeoutId = setTimeout(() => {
@@ -23,7 +24,9 @@ const DiscChannel = () => {
         <>
             <RiDiscFill
                 size={150}
-                className="text-gray-400 absolute ml-[-4rem] mt-8 animate-spin"
+                className={`text-gray-400 absolute md:ml-[-4rem] md:mt-8 animate-spin ${
+                    isMdOrLarger ? "" : "top-[-10px] left-[8.3rem]"
+                }`}
             />
 
             <div
