@@ -43,7 +43,7 @@ const TechnologiesView = () => {
     return (
         <div className="bg-blue-950 w-full h-screen pt-10">
             <div
-                className={`flex flex-col font-mono text-white text-4xl gap-4 justify-center items-center`}
+                className={`flex flex-col font-mono text-white md:text-4xl text-xl gap-4 justify-center items-center`}
             >
                 {/* Programing Languages and Tools */}
                 <h2
@@ -57,35 +57,35 @@ const TechnologiesView = () => {
                     <img
                         src={html}
                         alt="HTML"
-                        className={`w-20 transition-opacity duration-700 ${
+                        className={`md:w-20 w-10 transition-opacity duration-700 ${
                             currentStep >= 2 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={css}
                         alt="CSS"
-                        className={`w-20 transition-opacity duration-700 ${
+                        className={`md:w-20 w-10 transition-opacity duration-700 ${
                             currentStep >= 3 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={javascript}
                         alt="JavaScript"
-                        className={`w-20 transition-opacity duration-700 ${
+                        className={`md:w-20 w-10 transition-opacity duration-700 ${
                             currentStep >= 4 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={java}
                         alt="Java"
-                        className={`w-20 transition-opacity duration-700 ${
+                        className={`md:w-20 w-10 transition-opacity duration-700 ${
                             currentStep >= 5 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={python}
                         alt="Python"
-                        className={`w-20 transition-opacity duration-700 ${
+                        className={`md:w-20 w-10 transition-opacity duration-700 ${
                             currentStep >= 6 ? "opacity-100" : "opacity-0"
                         }`}
                     />
@@ -103,21 +103,21 @@ const TechnologiesView = () => {
                     <img
                         src={react}
                         alt="React"
-                        className={`w-20 transition-opacity duration-700 ${
+                        className={`md:w-20 w-10 transition-opacity duration-700 ${
                             currentStep >= 8 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={rails}
                         alt="Ruby on Rails"
-                        className={`w-20 transition-opacity duration-700 ${
+                        className={`md:w-20 w-10 transition-opacity duration-700 ${
                             currentStep >= 9 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={spring}
                         alt="Spring"
-                        className={`w-20 transition-opacity duration-700 ${
+                        className={`md:w-20 w-10 transition-opacity duration-700 ${
                             currentStep >= 10 ? "opacity-100" : "opacity-0"
                         }`}
                     />
@@ -135,14 +135,14 @@ const TechnologiesView = () => {
                     <img
                         src={mysql}
                         alt="MySQL"
-                        className={`w-20 transition-opacity duration-700 ${
+                        className={`md:w-20 w-10 transition-opacity duration-700 ${
                             currentStep >= 12 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={postgres}
                         alt="PostgreSQL"
-                        className={`w-20 transition-opacity duration-700 ${
+                        className={`md:w-20 w-10 transition-opacity duration-700 ${
                             currentStep >= 13 ? "opacity-100" : "opacity-0"
                         }`}
                     />
@@ -160,35 +160,35 @@ const TechnologiesView = () => {
                     <img
                         src={docker}
                         alt="Docker"
-                        className={`w-20 transition-opacity duration-700 ${
+                        className={`md:w-20 w-10 transition-opacity duration-700 ${
                             currentStep >= 15 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={tailwindcss}
                         alt="Tailwind CSS"
-                        className={`w-20 transition-opacity duration-700 ${
+                        className={`md:w-20 w-10 transition-opacity duration-700 ${
                             currentStep >= 16 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={figma}
                         alt="Figma"
-                        className={`w-20 transition-opacity duration-700 ${
+                        className={`md:w-20 w-10 transition-opacity duration-700 ${
                             currentStep >= 17 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={bootstrap}
                         alt="Bootstrap"
-                        className={`w-20 transition-opacity duration-700 ${
+                        className={`md:w-20 w-10 transition-opacity duration-700 ${
                             currentStep >= 18 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={gsapSvg}
                         alt="GSAP"
-                        className={`w-20 transition-opacity duration-700 ${
+                        className={`md:w-20 w-10 transition-opacity duration-700 ${
                             currentStep >= 19 ? "opacity-100" : "opacity-0"
                         }`}
                     />

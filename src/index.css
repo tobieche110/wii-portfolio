@@ -231,8 +231,8 @@ body {
 .mm-footer-bg {
     background-image: url("assets/svgs/menu-footer.svg");
     background-repeat: no-repeat;
-    background-position: top;
-    background-size: cover; /* Cover asegura que cubra tanto el ancho como el alto */
+    background-position: bottom;
+    background-size: contain; /* Cover asegura que cubra tanto el ancho como el alto */
 }
 
 /* Altura del footer */

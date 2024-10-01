@@ -47,31 +47,39 @@ const MmFooter = () => {
     const formattedTime = currentTime.replace(":", showColon ? ":" : " ");
 
     return (
-        <footer className="fixed bottom-0 left-0 w-full flex justify-center items-center">
+        <>
             {/* Fondo del footer */}
-            <div className="mm-footer-bg absolute top-0 left-0 w-full h-full"></div>
-
-            {/* Current Date and Time */}
-            <div className="relative z-10 text-center top-0 flex flex-col items-center justify-start">
-                {/* Contenedor para Time y Meridem */}
-
-                <div className="flex items-end relative mb-2 pt-8 pl-44">
-                    {/* Time */}
-                    <div className="font-e1234 font-bold text-gray-400 text-8xl">
-                        {formattedTime}
+            <footer className="fixed bottom-0 left-0 w-full flex justify-center items-center mm-footer-bg">
+                {/* Current Date and Time */}
+                <div className="relative z-10 text-center top-0 flex flex-col items-center justify-start">
+                    {/* Contenedor para Time y Meridem */}
+                    <div className="flex items-end relative lg:pl-44 md:pl-20">
+                        {/* Time */}
+                        <div
+                            className="font-e1234 font-bold text-gray-400"
+                            style={{ fontSize: "5vw" }}
+                        >
+                            {formattedTime}
+                        </div>
+                        {/* Meridem */}
+                        <div
+                            className="font-rodin text-gray-400 ml-4"
+                            style={{ fontSize: "2vw", paddingBottom: "1.2vw" }}
+                        >
+                            {meridem}
+                        </div>
                     </div>
-                    {/* Meridem */}
-                    <div className="font-rodin text-gray-400 text-4xl ml-4 pb-2">
-                        {meridem}
+
+                    {/* Current Date */}
+                    <div
+                        className="font-rodin relative font-extrabold text-gray-500"
+                        style={{ fontSize: "4vw", paddingBottom: "4vw" }}
+                    >
+                        {currentDate}
                     </div>
                 </div>
-
-                {/* Current Date */}
-                <div className="font-rodin relative font-extrabold text-6xl text-gray-500 pb-24">
-                    {currentDate}
-                </div>
-            </div>
-        </footer>
+            </footer>
+        </>
     );
 };
 

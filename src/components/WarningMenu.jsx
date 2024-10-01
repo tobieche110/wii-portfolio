@@ -75,7 +75,7 @@ const WarningMenu = () => {
                 </div>
 
                 <div className="flex items-center mt-16">
-                    <div className="font-rodin font-black text-xl md:text-3xl text-center text-white md:ml-4 animate-blink">
+                    <div className="font-rodin font-black text-xl md:text-3xl text-center text-white md:ml-4 animate-blink hover:underline">
                         <div
                             onClick={handleClick}
                             style={{ cursor: "pointer" }}

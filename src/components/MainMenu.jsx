@@ -22,13 +22,14 @@ const MainMenu = () => {
     }, []);
 
     return (
+        <>
         <div
-            className={`mm-striped-bg bg-gray-100 md:w-full md:h-screen md:fixed pb-20 ${
+            className={`mm-striped-bg bg-gray-100 md:w-full md:h-screen md:fixed mb-20 ${
                 fadeIn ? "fade-in" : ""
             }`}
         >
             {/* Contenido principal del menú */}
-            <div className="md:flex flex-wrap md:px-32 md:pt-10 p-3 pt-14 justify-center">
+            <div className="md:flex flex-wrap xl:px-32 md:pt-4 p-3 pt-14 justify-center">
                 <Link to={"/about-me"} className="md:w-1/4 md:p-2">
                     <DiscChannel />
                 </Link>
@@ -113,6 +114,7 @@ const MainMenu = () => {
                 <MmFooter />
             </div>
         </div>
+        </>
     );
 };
 

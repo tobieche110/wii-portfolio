@@ -25,7 +25,7 @@ const DiscChannel = () => {
             <RiDiscFill
                 size={150}
                 className={`text-gray-400 absolute md:ml-[-4rem] md:mt-8 animate-spin ${
-                    isMdOrLarger ? "" : "top-[-10px] left-[8.3rem]"
+                    isMdOrLarger ? "" : "top-[-10px] left-auto"
                 }`}
             />
 
@@ -40,7 +40,7 @@ const DiscChannel = () => {
                         alt="Avatar"
                         className="w-28 rounded-full border-4 border-white shadow-md"
                     />
-                    <p className="font-serif font-bold text-3xl mt-4 bg-white px-5 py-1 rounded-full shadow-md">
+                    <p className="font-serif font-bold md:text-lg xl:text-3xl text-2xl items-center justify-center mt-4 bg-white px-5 py-1 rounded-full shadow-md">
                         About Tobias
                     </p>
                 </div>
