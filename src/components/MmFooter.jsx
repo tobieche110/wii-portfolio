@@ -53,7 +53,7 @@ const MmFooter = () => {
                 {/* Current Date and Time */}
                 <div className="relative z-10 text-center top-0 flex flex-col items-center justify-start">
                     {/* Contenedor para Time y Meridem */}
-                    <div className="flex items-end relative lg:pl-44 md:pl-20">
+                    <div className="flex items-end relative lg:pl-36 md:pl-20">
                         {/* Time */}
                         <div
                             className="font-e1234 font-bold text-gray-400"
@@ -73,7 +73,7 @@ const MmFooter = () => {
                     {/* Current Date */}
                     <div
                         className="font-rodin relative font-extrabold text-gray-500"
-                        style={{ fontSize: "4vw", paddingBottom: "4vw" }}
+                        style={{ fontSize: "4vw", paddingBottom: "1.2vw" }}
                     >
                         {currentDate}
                     </div>

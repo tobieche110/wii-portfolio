@@ -116,11 +116,11 @@ body {
     height: 20vh;
 }
 
-@media (max-height: 700px) {
+/* @media (max-height: 700px) {
     .channel-height {
         height: 18vh;
     }
-}
+} */
 
 .transparent-border {
     border-color: transparent;
@@ -241,7 +241,7 @@ body {
 
 /* Fondo del footer */
 .mm-footer-bg {
-    background-image: url("assets/svgs/menu-footer.svg");
+    background-image: url("assets/svgs/mm-footer.svg");
     background-repeat: no-repeat;
     background-position: bottom;
     background-size: contain; /* Cover asegura que cubra tanto el ancho como el alto */
