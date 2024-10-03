@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { useMediaQuery } from "react-responsive";
 import ViewFooter from "./ViewFooter";
 import avatarSvg from "../assets/svgs/avatar.svg";
 import gsap from "gsap";
@@ -9,6 +10,8 @@ const AboutMe = () => {
     const frameRef = useRef();
     const textRef = useRef();
     const startRef = useRef();
+
+    const isTallerThan660 = useMediaQuery({ minHeight: 660 });
 
     useGSAP(() => {
         gsap.from(avatarRef.current, {
@@ -54,7 +57,11 @@ const AboutMe = () => {
                     {/* Marco giratorio */}
                     <div
                         ref={frameRef}
-                        className="absolute w-24 h-24 sm:w-32 sm:h-32 md:w-[14vw] md:h-[14vw] rounded-full border-t-4 border-orange-600 flex justify-center items-center"
+                        className={`absolute w-24 h-24 sm:w-32 sm:h-32 ${
+                            isTallerThan660
+                                ? "md:w-[16vw] md:h-[16vw]"
+                                : "md:w-[23vh] md:h-[23vh]"
+                        } rounded-full border-t-4 border-orange-600 flex justify-center items-center`}
                     >
                         {" "}
                     </div>
@@ -62,7 +69,9 @@ const AboutMe = () => {
                     <img
                         src={avatarSvg}
                         alt="avatar"
-                        className="w-16 sm:w-24 md:w-[13vw]  rounded-full shadow-lg"
+                        className={`${
+                            isTallerThan660 ? "md:w-[14vw]" : "md:w-[20vh]"
+                        } w-16 sm:w-24 rounded-full shadow-lg`}
                         ref={avatarRef}
                     />
                 </div>
@@ -91,14 +100,12 @@ const AboutMe = () => {
                         adapt quickly to new trends and work environments.
                     </p>
                     <p className="text-lg sm:text-xl md:text-[2vw] pt-3">
-                        
                         <span
                             className="text-slate-600 sm:text-2xl md:text-[2.8vw] font-rodin font-bold animate-pulse"
                             ref={startRef}
                         >
                             Press "Start" to view my Resume.
                         </span>{" "}
-                        
                     </p>
                 </div>
             </div>
