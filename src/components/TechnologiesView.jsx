@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { useMediaQuery } from "react-responsive";
 import css from "../assets/svgs/css.svg";
 import html from "../assets/svgs/html.svg";
 import javascript from "../assets/svgs/js.svg";
@@ -18,6 +19,9 @@ import ViewFooter from "./ViewFooter";
 
 const TechnologiesView = () => {
     const [currentStep, setCurrentStep] = useState(0);
+
+    // Verificar si la altura es menor a 715px
+    const isShortScreen = useMediaQuery({ maxHeight: 715 });
 
     useEffect(() => {
         const steps = 21;
@@ -41,9 +45,17 @@ const TechnologiesView = () => {
     }, [currentStep]);
 
     return (
-        <div className="bg-blue-950 w-full h-screen pt-10">
+        <div
+            className={`bg-blue-950 w-full h-screen ${
+                isShortScreen ? "pt-2" : "pt-10"
+            }`}
+        >
             <div
-                className={`flex flex-col font-mono text-white md:text-[2.1vw] text-xl gap-4 justify-center items-center`}
+                className={`flex flex-col font-mono text-white ${
+                    isShortScreen
+                        ? "md:text-[3vh] text-sm"
+                        : "md:text-[2.1vw] text-xl"
+                } gap-4 justify-center items-center`}
             >
                 {/* Programing Languages and Tools */}
                 <h2
@@ -57,35 +69,55 @@ const TechnologiesView = () => {
                     <img
                         src={html}
                         alt="HTML"
-                        className={`md:w-[4.5vw] w-10 transition-opacity duration-700 ${
+                        className={`${
+                            isShortScreen
+                                ? "md:w-[8vh] w-8"
+                                : "md:w-[4.5vw] w-10"
+                        } transition-opacity duration-700 ${
                             currentStep >= 2 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={css}
                         alt="CSS"
-                        className={`md:w-[4.5vw] w-10 transition-opacity duration-700 ${
+                        className={`${
+                            isShortScreen
+                                ? "md:w-[8vh] w-8"
+                                : "md:w-[4.5vw] w-10"
+                        } transition-opacity duration-700 ${
                             currentStep >= 3 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={javascript}
                         alt="JavaScript"
-                        className={`md:w-[4.5vw] w-10 transition-opacity duration-700 ${
+                        className={`${
+                            isShortScreen
+                                ? "md:w-[8vh] w-8"
+                                : "md:w-[4.5vw] w-10"
+                        } transition-opacity duration-700 ${
                             currentStep >= 4 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={java}
                         alt="Java"
-                        className={`md:w-[4.5vw] w-10 transition-opacity duration-700 ${
+                        className={`${
+                            isShortScreen
+                                ? "md:w-[8vh] w-8"
+                                : "md:w-[4.5vw] w-10"
+                        } transition-opacity duration-700 ${
                             currentStep >= 5 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={python}
                         alt="Python"
-                        className={`md:w-[4.5vw] w-10 transition-opacity duration-700 ${
+                        className={`${
+                            isShortScreen
+                                ? "md:w-[8vh] w-8"
+                                : "md:w-[4.5vw] w-10"
+                        } transition-opacity duration-700 ${
                             currentStep >= 6 ? "opacity-100" : "opacity-0"
                         }`}
                     />
@@ -103,21 +135,33 @@ const TechnologiesView = () => {
                     <img
                         src={react}
                         alt="React"
-                        className={`md:w-[4.5vw] w-10 transition-opacity duration-700 ${
+                        className={`${
+                            isShortScreen
+                                ? "md:w-[8vh] w-8"
+                                : "md:w-[4.5vw] w-10"
+                        } transition-opacity duration-700 ${
                             currentStep >= 8 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={rails}
                         alt="Ruby on Rails"
-                        className={`md:w-[4.5vw] w-10 transition-opacity duration-700 ${
+                        className={`${
+                            isShortScreen
+                                ? "md:w-[8vh] w-8"
+                                : "md:w-[4.5vw] w-10"
+                        } transition-opacity duration-700 ${
                             currentStep >= 9 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={spring}
                         alt="Spring"
-                        className={`md:w-[4.5vw] w-10 transition-opacity duration-700 ${
+                        className={`${
+                            isShortScreen
+                                ? "md:w-[8vh] w-8"
+                                : "md:w-[4.5vw] w-10"
+                        } transition-opacity duration-700 ${
                             currentStep >= 10 ? "opacity-100" : "opacity-0"
                         }`}
                     />
@@ -135,14 +179,22 @@ const TechnologiesView = () => {
                     <img
                         src={mysql}
                         alt="MySQL"
-                        className={`md:w-[4.5vw] w-10 transition-opacity duration-700 ${
+                        className={`${
+                            isShortScreen
+                                ? "md:w-[8vh] w-8"
+                                : "md:w-[4.5vw] w-10"
+                        } transition-opacity duration-700 ${
                             currentStep >= 12 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={postgres}
                         alt="PostgreSQL"
-                        className={`md:w-[4.5vw] w-10 transition-opacity duration-700 ${
+                        className={`${
+                            isShortScreen
+                                ? "md:w-[8vh] w-8"
+                                : "md:w-[4.5vw] w-10"
+                        } transition-opacity duration-700 ${
                             currentStep >= 13 ? "opacity-100" : "opacity-0"
                         }`}
                     />
@@ -160,35 +212,55 @@ const TechnologiesView = () => {
                     <img
                         src={docker}
                         alt="Docker"
-                        className={`md:w-[4.5vw] w-10 transition-opacity duration-700 ${
+                        className={`${
+                            isShortScreen
+                                ? "md:w-[8vh] w-8"
+                                : "md:w-[4.5vw] w-10"
+                        } transition-opacity duration-700 ${
                             currentStep >= 15 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={tailwindcss}
                         alt="Tailwind CSS"
-                        className={`md:w-[4.5vw] w-10 transition-opacity duration-700 ${
+                        className={`${
+                            isShortScreen
+                                ? "md:w-[8vh] w-8"
+                                : "md:w-[4.5vw] w-10"
+                        } transition-opacity duration-700 ${
                             currentStep >= 16 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={figma}
                         alt="Figma"
-                        className={`md:w-[4.5vw] w-10 transition-opacity duration-700 ${
+                        className={`${
+                            isShortScreen
+                                ? "md:w-[8vh] w-8"
+                                : "md:w-[4.5vw] w-10"
+                        } transition-opacity duration-700 ${
                             currentStep >= 17 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={bootstrap}
                         alt="Bootstrap"
-                        className={`md:w-[4.5vw] w-10 transition-opacity duration-700 ${
+                        className={`${
+                            isShortScreen
+                                ? "md:w-[8vh] w-8"
+                                : "md:w-[4.5vw] w-10"
+                        } transition-opacity duration-700 ${
                             currentStep >= 18 ? "opacity-100" : "opacity-0"
                         }`}
                     />
                     <img
                         src={gsapSvg}
                         alt="GSAP"
-                        className={`md:w-[4.5vw] w-10 transition-opacity duration-700 ${
+                        className={`${
+                            isShortScreen
+                                ? "md:w-[8vh] w-8"
+                                : "md:w-[4.5vw] w-10"
+                        } transition-opacity duration-700 ${
                             currentStep >= 19 ? "opacity-100" : "opacity-0"
                         }`}
                     />
