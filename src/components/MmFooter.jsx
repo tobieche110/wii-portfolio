@@ -49,7 +49,7 @@ const MmFooter = () => {
     return (
         <>
             {/* Fondo del footer */}
-            <footer className="fixed bottom-0 left-0 w-full flex justify-center items-center mm-footer-bg">
+            <footer className="fixed bottom-0 left-0 w-[100vw] flex justify-center items-center mm-footer-bg">
                 {/* Current Date and Time */}
                 <div className="relative z-10 text-center top-0 flex flex-col items-center justify-start">
                     {/* Contenedor para Time y Meridem */}

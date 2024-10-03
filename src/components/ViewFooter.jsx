@@ -9,7 +9,7 @@ const ViewFooter = () => {
     }
 
     return (
-        <footer className="fixed bottom-0 left-0 w-full flex justify-center items-center ec-striped-bg bg-gray-100 border-t-2 border-gray-700 md:py-16 py-8 md:gap-36 gap-2">
+        <footer className="fixed bottom-0 left-0 w-full flex justify-center items-center ec-striped-bg bg-gray-100 border-t-2 border-gray-700 md:py-[3.3vw] py-8 md:gap-36 gap-2">
             <Link to={"/main-menu"}>
                 <div className="rounded-full border-2 border-[#00C4FF]">
                     <img src={wiiMenuButton} alt="wiiMenuButton" className="object-contain md:w-96 w-48"/>

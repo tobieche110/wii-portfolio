@@ -37,7 +37,7 @@ const BannerChannel = ({ image, legend, classes }) => {
                 <img
                     src={image}
                     alt={legend}
-                    className={`object-cover w-24 h-24 ${classes}`}
+                    className={`object-cover md:w-[5vw] w-24 ${classes}`}
                 />
             </div>
 

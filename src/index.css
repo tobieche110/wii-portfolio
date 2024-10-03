@@ -113,7 +113,7 @@ body {
 }
 
 .channel-height {
-    height: 12rem;
+    height: 19vh;
 }
 
 .transparent-border {
@@ -240,3 +240,5 @@ body {
     height: auto;
     min-height: 322px; /* Altura mínima */
 }
+
+

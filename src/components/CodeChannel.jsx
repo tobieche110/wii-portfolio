@@ -22,7 +22,7 @@ const CodeChannel = () => {
             onMouseLeave={handleMouseLeave}
         >
             <div className="bg-teal-800 text-white text-center flex items-center justify-center font-mono rounded-lg w-full h-full overflow-hidden channel-height">
-                <div className="typewriter text-7xl">
+                <div className="typewriter md:text-[4vw] text-7xl">
                     <span>{"</>"}</span>
                 </div>
             </div>

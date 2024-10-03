@@ -43,7 +43,7 @@ const TechnologiesChannel = () => {
                     <img
                         src={icons[currentIconIndex]}
                         alt="Icon"
-                        className="w-24 h-24"
+                        className="md:w-[5vw] w-24"
                     />
                 </div>
             </div>

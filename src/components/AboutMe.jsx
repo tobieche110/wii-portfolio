@@ -54,7 +54,7 @@ const AboutMe = () => {
                     {/* Marco giratorio */}
                     <div
                         ref={frameRef}
-                        className="absolute w-24 h-24 sm:w-32 sm:h-32 md:w-48 md:h-48 lg:w-64 lg:h-64 xl:w-72 xl:h-72 rounded-full border-t-4 border-orange-600 flex justify-center items-center"
+                        className="absolute w-24 h-24 sm:w-32 sm:h-32 md:w-[14vw] md:h-[14vw] rounded-full border-t-4 border-orange-600 flex justify-center items-center"
                     >
                         {" "}
                     </div>
@@ -62,7 +62,7 @@ const AboutMe = () => {
                     <img
                         src={avatarSvg}
                         alt="avatar"
-                        className="w-16 h-16 sm:w-24 sm:h-24 md:w-36 md:h-36 lg:w-48 lg:h-48 xl:w-64 xl:h-64 rounded-full shadow-lg"
+                        className="w-16 sm:w-24 md:w-[13vw]  rounded-full shadow-lg"
                         ref={avatarRef}
                     />
                 </div>
@@ -72,33 +72,33 @@ const AboutMe = () => {
                     className="text-center font-serif font-semibold text-gray-700 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32"
                     ref={textRef}
                 >
-                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl mb-2 sm:mb-4 md:mb-6 leading-relaxed">
+                    <p className="text-lg sm:text-xl md:text-[2vw] mb-2 sm:mb-4 md:mb-6 leading-relaxed">
                         Hi! My name is{" "}
                         <span className="text-orange-600 animate-pulse">
                             Tobias Echenique
                         </span>
                         , and I am from Mendoza, Argentina.
                     </p>
-                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-2 sm:mb-4 md:mb-6 leading-relaxed">
+                    <p className="text-base sm:text-lg md:text-[1.5vw] mb-2 sm:mb-4 md:mb-6 leading-relaxed">
                         Since high school, I've been studying Software
                         Development and found a passion for it.
                     </p>
-                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl mb-2 sm:mb-4 md:mb-6 leading-relaxed">
+                    <p className="text-base sm:text-lg md:text-[1.5vw] mb-2 sm:mb-4 md:mb-6 leading-relaxed">
                         I excel at solving complex tasks, both in{" "}
                         <span className="text-blue-600">Frontend</span> and{" "}
                         <span className="text-blue-600">Backend</span>{" "}
                         development. I enjoy learning new technologies, and I
                         adapt quickly to new trends and work environments.
                     </p>
-                    <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
-                        I invite you to press{" "}
+                    <p className="text-lg sm:text-xl md:text-[2vw] pt-3">
+                        
                         <span
-                            className="text-slate-500 font-bold animate-pulse"
+                            className="text-slate-600 sm:text-2xl md:text-[2.8vw] font-rodin font-bold animate-pulse"
                             ref={startRef}
                         >
-                            "Start"
+                            Press "Start" to view my Resume.
                         </span>{" "}
-                        to view my Resume.
+                        
                     </p>
                 </div>
             </div>
