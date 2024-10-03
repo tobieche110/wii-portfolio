@@ -2,14 +2,13 @@ import { useState, useRef } from "react";
 import { RiDiscFill } from "react-icons/ri";
 import { useMediaQuery } from "react-responsive";
 import avatar from "../assets/svgs/avatar.svg";
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
 
 const DiscChannel = () => {
     const [showTooltip, setShowTooltip] = useState(false);
     const [hoverTimeout, setHoverTimeout] = useState(null);
+    
     const isMdOrLarger = useMediaQuery({ minWidth: 768 });
-    const frameRef = useRef();
+    const isTallerThan720 = useMediaQuery({ minHeight: 720 });
 
     const handleMouseEnter = () => {
         const timeoutId = setTimeout(() => {
@@ -22,16 +21,6 @@ const DiscChannel = () => {
         clearTimeout(hoverTimeout);
         setShowTooltip(false);
     };
-
-    useGSAP(() => {
-        gsap.to(frameRef.current, {
-            rotation: 360,
-            repeat: -1,
-            duration: 2,
-            ease: "linear",
-            transformOrigin: "50% 50%",
-        });
-    });
 
     return (
         <>
@@ -50,23 +39,21 @@ const DiscChannel = () => {
                 />
 
                 {/* Fondo naranja */}
-                <div
-                    className="absolute inset-0 bg-orange-200 rounded-xl z-10"
-                ></div>
+                <div className="absolute inset-0 bg-orange-200 rounded-xl z-10"></div>
 
                 <div className="flex flex-col z-20 items-center overflow-hidden">
-                    {/* <div
-                        ref={frameRef}
-                        className="absolute md:w-[6.8vw] md:h-[6.8vw] w-20 h-20 rounded-full border-t-4 border-orange-600 flex justify-center items-center z-30"
-                    ></div> */}
                     <img
                         src={avatar}
                         alt="Avatar"
-                        className="md:w-[6.5vw] w-20 rounded-full shadow-md border-4 border-white z-30 pt-1"
+                        className="md:w-[6.5vw] w-20 rounded-full shadow-lg z-30 pt-1"
                     />
-                    <p className="font-serif font-bold md:text-base lg:text-base xl:text-xl text-lg text-center items-center justify-center mt-4 bg-white md:px-[3vw] px-5 rounded-full shadow-md z-30">
-                        About Tobias
-                    </p>
+                    
+                    {/* Renderizar el texto "About Tobias" solo si la altura de la pantalla es mayor a 720px */}
+                    {isMdOrLarger && isTallerThan720 && (
+                        <p className="font-serif font-bold md:text-base lg:text-base xl:text-xl text-lg text-center items-center justify-center mt-4 bg-white md:px-[3vw] px-5 rounded-full shadow-md z-30">
+                            About Tobias
+                        </p>
+                    )}
                 </div>
 
                 {/* Tooltip */}
