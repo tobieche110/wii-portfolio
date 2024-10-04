@@ -2,11 +2,14 @@ import { useState, useRef } from "react";
 import { RiDiscFill } from "react-icons/ri";
 import { useMediaQuery } from "react-responsive";
 import avatar from "../assets/svgs/avatar.svg";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const DiscChannel = () => {
     const [showTooltip, setShowTooltip] = useState(false);
     const [hoverTimeout, setHoverTimeout] = useState(null);
-    
+    const frameRef = useRef();
+
     const isMdOrLarger = useMediaQuery({ minWidth: 768 });
     const isTallerThan800 = useMediaQuery({ minHeight: 800 });
 
@@ -22,6 +25,16 @@ const DiscChannel = () => {
         setShowTooltip(false);
     };
 
+    useGSAP(() => {
+        gsap.to(frameRef.current, {
+            rotation: 360,
+            repeat: -1,
+            duration: 2,
+            ease: "linear",
+            transformOrigin: "50% 50%",
+        });
+    });
+
     return (
         <>
             <div
@@ -33,7 +46,9 @@ const DiscChannel = () => {
                 <RiDiscFill
                     size={isMdOrLarger ? "7.6vw" : "150"}
                     className={`text-gray-400 absolute z-0 animate-spin ${
-                        isMdOrLarger ? "md:ml-[-18.5vw] md:mt-[0.2vw]" : "top-[-50px] left-auto"
+                        isMdOrLarger
+                            ? "md:ml-[-18.5vw] md:mt-[0.2vw]"
+                            : "top-[-50px] left-auto"
                     }`}
                     style={{ zIndex: 1 }} // Asegurar que esté detrás del contenido
                 />
@@ -42,12 +57,20 @@ const DiscChannel = () => {
                 <div className="absolute inset-0 bg-orange-200 rounded-xl z-10"></div>
 
                 <div className="flex flex-col z-20 items-center overflow-hidden">
+                    {/* Marco giratorio */}
+                    {!isTallerThan800 && <div
+                        ref={frameRef}
+                        className={`absolute md:w-[7.3vw] md:h-[7.3vw] w-24 h-24
+                        rounded-full border-t-4 border-orange-600 flex justify-center items-center`}
+                    >
+                        {" "}
+                    </div>}
                     <img
                         src={avatar}
                         alt="Avatar"
                         className="md:w-[6.5vw] w-20 rounded-full shadow-lg z-30 pt-1"
                     />
-                    
+
                     {/* Renderizar el texto "About Tobias" solo si la altura de la pantalla es mayor a 720px */}
                     {isTallerThan800 && (
                         <p className="font-serif font-bold md:text-base lg:text-base xl:text-xl text-lg text-center items-center justify-center mt-4 bg-white md:px-[3vw] px-5 rounded-full shadow-md z-30">
