@@ -8,7 +8,7 @@ const DiscChannel = () => {
     const [hoverTimeout, setHoverTimeout] = useState(null);
     
     const isMdOrLarger = useMediaQuery({ minWidth: 768 });
-    const isTallerThan720 = useMediaQuery({ minHeight: 720 });
+    const isTallerThan800 = useMediaQuery({ minHeight: 800 });
 
     const handleMouseEnter = () => {
         const timeoutId = setTimeout(() => {
@@ -49,7 +49,7 @@ const DiscChannel = () => {
                     />
                     
                     {/* Renderizar el texto "About Tobias" solo si la altura de la pantalla es mayor a 720px */}
-                    {isMdOrLarger && isTallerThan720 && (
+                    {isTallerThan800 && (
                         <p className="font-serif font-bold md:text-base lg:text-base xl:text-xl text-lg text-center items-center justify-center mt-4 bg-white md:px-[3vw] px-5 rounded-full shadow-md z-30">
                             About Tobias
                         </p>
