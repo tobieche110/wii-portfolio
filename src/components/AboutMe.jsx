@@ -11,7 +11,8 @@ const AboutMe = () => {
     const textRef = useRef();
     const startRef = useRef();
 
-    const isTallerThan660 = useMediaQuery({ minHeight: 660 });
+    const isTallerThan660 = useMediaQuery({ minHeight: 690 });
+    const isTallerThan600 = useMediaQuery({ minHeight: 600 });
 
     useGSAP(() => {
         gsap.from(avatarRef.current, {
@@ -51,7 +52,7 @@ const AboutMe = () => {
 
     return (
         <div className="flex flex-col h-screen w-full bg-orange-200">
-            <div className="flex flex-col flex-grow justify-center items-center p-4 sm:p-6 md:p-8 lg:p-12 bg-gradient-to-r from-orange-100 to-orange-200 rounded-lg shadow-lg h-full pb-20 sm:pb-36 md:pb-48 lg:pb-64">
+            <div className={`flex flex-col flex-grow justify-center items-center p-4 sm:p-6 md:p-8 lg:p-12 bg-gradient-to-r from-orange-100 to-orange-200 rounded-lg shadow-lg h-full pb-20 sm:pb-36 ${isTallerThan600 ? "md:pb-48 lg:pb-64" : "md:pb-[30vh] lg:pb-[30vh]"}`}>
                 {/* Marco giratorio y avatar */}
                 <div className="relative mb-4 sm:mb-8 flex justify-center items-center">
                     {/* Marco giratorio */}

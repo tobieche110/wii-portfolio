@@ -21,7 +21,7 @@ const TechnologiesView = () => {
     const [currentStep, setCurrentStep] = useState(0);
 
     // Verificar si la altura es menor a 715px
-    const isShortScreen = useMediaQuery({ maxHeight: 715 });
+    const isShortScreen = useMediaQuery({ maxHeight: 750 });
 
     useEffect(() => {
         const steps = 21;
