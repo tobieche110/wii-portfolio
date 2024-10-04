@@ -11,8 +11,8 @@ const AboutMe = () => {
     const textRef = useRef();
     const startRef = useRef();
 
-    const isTallerThan695 = useMediaQuery({ minHeight: 695  });
-    const isTallerThan600 = useMediaQuery({ minHeight: 600 });
+    const isTallerThan700 = useMediaQuery({ minHeight: 700  });
+    const isTallerThan600 = useMediaQuery({ minHeight: 700 });
 
     useGSAP(() => {
         gsap.from(avatarRef.current, {
@@ -59,7 +59,7 @@ const AboutMe = () => {
                     <div
                         ref={frameRef}
                         className={`absolute w-24 h-24 sm:w-32 sm:h-32 ${
-                            isTallerThan695
+                            isTallerThan700
                                 ? "md:w-[16vw] md:h-[16vw]"
                                 : "md:w-[23vh] md:h-[23vh]"
                         } rounded-full border-t-4 border-orange-600 flex justify-center items-center`}
@@ -71,7 +71,7 @@ const AboutMe = () => {
                         src={avatarSvg}
                         alt="avatar"
                         className={`${
-                            isTallerThan695 ? "md:w-[14vw]" : "md:w-[20vh]"
+                            isTallerThan700 ? "md:w-[14vw]" : "md:w-[20vh]"
                         } w-16 sm:w-24 rounded-full shadow-lg`}
                         ref={avatarRef}
                     />
